@@ -1,5 +1,9 @@
+import re
+
+
 def url_checker(rand_str):
-    if rand_str.startswith('http') or rand_str.startswith('https'):
+    match = r"https?://www.[\w\.]+[.][a-z]+"
+    if re.findall(match, rand_str):
         print('url is valid')
     else:
         print('url is not valid')
